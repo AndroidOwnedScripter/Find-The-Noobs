@@ -20,7 +20,7 @@ local folder = workspace:WaitForChild("ToFind")
 
 local AutoFind = false
 
--- Toggle
+-- Toggle Auto Find
 Tab:CreateToggle({
 	Name = "Auto Find",
 	CurrentValue = false,
@@ -37,8 +37,28 @@ Tab:CreateToggle({
 						firetouchinterest(hrp, part, 1)
 					end
 				end
-				task.wait() -- ultra rapide (1 frame)
+				task.wait()
 			end
 		end)
+	end
+})
+
+-- Petit texte
+Tab:CreateParagraph({
+	Title = "Discord",
+	Content = "find op scripts here"
+})
+
+-- Bouton Join Discord
+Tab:CreateButton({
+	Name = "Join The Discord",
+	Callback = function()
+		setclipboard("https://discord.gg/YTAUARbbuj")
+
+		Rayfield:Notify({
+			Title = "Discord",
+			Content = "Link copied to clipboard",
+			Duration = 3
+		})
 	end
 })
